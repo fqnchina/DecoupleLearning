@@ -1,0 +1,10 @@
+/mnt/data/VOC2012_L0smooth_output/2012_001332_0.04834_374_500.png
+/mnt/data/VOC2012_WLS_output/2007_009253_7.47273_390_500.png
+/mnt/data/VOC2012_RTV_output/2008_003791_0.01307_500_356.png
+/mnt/data/VOC2012_RGF_output/2010_002552_7.38100_346_500.png
+/mnt/data/VOC2012_WMF_output/2012_000521_6.51981_500_478.png
+/mnt/data/VOC2012_shock_output/2007_005803_1.00000_374_500.png
+/mnt/data/VOC2012_deblock_output/2009_004904_19.49354_374_500.jpg
+/mnt/data/sky_rainy_dataset/rainy_image_even/765_2_384_512.png
+/mnt/data/VOC2012_srgray234_output/2009_004272_2_314_500.png
+/mnt/data/VOC2012_denoisegray_output/2009_005081_52.59245_332_500.png
