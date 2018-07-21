@@ -29,7 +29,7 @@ The generated training or test images need to be collected into a file list with
 
 ### Training
 
-Directly run **train_10_operator_model.py** to jointly train 10 image operators with different parameter settings with the generated training data.
+Directly run **train_10_operator_model.py** to jointly train 10 image operators with different parameter settings.
 
 Users can also choose to train our model on the 6 filtering based operators (**train_6_filter_operator_model.py**), 4 restoration operators (**train_4_restoration_operator_model.py**) or each single operator (**train_1_operator.py**).
 
