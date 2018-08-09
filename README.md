@@ -3,7 +3,7 @@ Decouple Learning for Parameterized Image Operators
 
 This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameterized Image Operators"* by [Qingnan Fan](<https://fqnchina.github.io/homepage/>), [Dongdong Chen](<http://www.dongdongchen.bid/>) *et al.*
 
-One network that implements various visual effects by adaptively changing the network weights with controllable input parameters.
+One network that implements various visual effects by adaptively changing the network weights with controllable continuous input parameters.
 
 ![image](demo1.png)
 ![image](demo2.png)
