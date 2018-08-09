@@ -3,6 +3,11 @@ Decouple Learning for Parameterized Image Operators
 
 This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameterized Image Operators"* by [Qingnan Fan](<https://fqnchina.github.io/homepage/>), [Dongdong Chen](<http://www.dongdongchen.bid/>) *et al.*
 
+One network that implements various visual effects with network weights adaptively changed by controllable input parameters.
+
+![image](demo1.png)
+![image](demo2.png)
+
 Introduction
 ----
 **Decouple Learning** is a technique that successfully incorporates many different parameterised image operators (edge-preserving filter, texture removal, shock filter, super resolution, denoising, derain, deblock, etc.) into one single network. 
