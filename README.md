@@ -5,7 +5,8 @@ This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameteri
 
 One network that implements various visual effects by adaptively changing the network weights with controllable continuous input parameters.
 
-![image](demo1.png)
+![image](demo1_part1.png)
+![image](demo1_part2.png)
 ![image](demo2.png)
 
 Introduction
