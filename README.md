@@ -1,7 +1,7 @@
 Decouple Learning for Parameterized Image Operators
 =======
 
-This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameterized Image Operators"* and TPAMI 2019 paper *"A General Decoupled Learning Framework  for Parameterized Image Operators"*by [Qingnan Fan](<https://fqnchina.github.io/>), [Dongdong Chen](<http://www.dongdongchen.bid/>) *et al.*
+This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameterized Image Operators"* and TPAMI 2019 paper *"A General Decoupled Learning Framework for Parameterized Image Operators"* by [Qingnan Fan](<https://fqnchina.github.io/>), [Dongdong Chen](<http://www.dongdongchen.bid/>) *et al.*
 
 One network that implements various visual effects by adaptively changing the network weights with controllable continuous input parameters.
 
@@ -45,7 +45,7 @@ Compute the PSNR and SSIM error metric by running **compute_error.m** in MATLAB.
 
 ### Updates
 
-The tpami extension of this paper mainly includes jointly training over ten image operators via the real-time parameter tuning module. The related codes is in **train_10_operator_model_realtime.py** and **evaluation_10_operator_model_realtime.py**.
+The tpami extension of this paper mainly includes jointly training over ten image operators facilitated with the real-time parameter tuning module. The related codes is in **train_10_operator_model_realtime.py** and **evaluation_10_operator_model_realtime.py**.
 
 Cite
 ----
