@@ -1,7 +1,7 @@
 Decouple Learning for Parameterized Image Operators
 =======
 
-This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameterized Image Operators"* by [Qingnan Fan](<https://fqnchina.github.io/>), [Dongdong Chen](<http://www.dongdongchen.bid/>) *et al.*
+This is the implementation of ECCV 2018 paper *"Decouple Learning for Parameterized Image Operators"* and TPAMI 2019 paper *"A General Decoupled Learning Framework  for Parameterized Image Operators"*by [Qingnan Fan](<https://fqnchina.github.io/>), [Dongdong Chen](<http://www.dongdongchen.bid/>) *et al.*
 
 One network that implements various visual effects by adaptively changing the network weights with controllable continuous input parameters.
 
@@ -43,16 +43,28 @@ Users can also choose to train our model on the 6 filtering based operators (**t
 
 Compute the PSNR and SSIM error metric by running **compute_error.m** in MATLAB. The ground truth images can be obtained from the above pre-generated evaluation image link.
 
+### Updates
+
+The tpami extension of this paper mainly includes jointly training over ten image operators via the real-time parameter tuning module. The related codes is in **train_10_operator_model_realtime.py** and **evaluation_10_operator_model_realtime.py**.
+
 Cite
 ----
 
-You can use our codes for research purpose only. And please cite our paper when you use our codes.
+You can use our codes for research purpose only. And please cite our papers when you use our codes.
 ```
 @article{fan2018decouple,
   title={Decouple Learning for Parameterized Image Operators},
   author={Fan, Qingnan and Chen, Dongdong and Yuan, Lu and Hua, Gang and Yu, Nenghai and Chen, Baoquan},
   booktitle={European Conference on Computer Vision (ECCV)},
   year={2018}
+}
+```
+```
+@article{fan2019decouple,
+  title={A General Decoupled Learning Framework  for Parameterized Image Operators},
+  author={Fan, Qingnan and Chen, Dongdong and Yuan, Lu and Hua, Gang and Yu, Nenghai and Chen, Baoquan},
+  booktitle={IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)},
+  year={2019}
 }
 ```
 Contact
