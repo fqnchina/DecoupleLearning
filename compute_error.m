@@ -1,3 +1,18 @@
+%%%%%% uncomment for the jointly trained 10 operator model with real-time parameter tuning module %%%%%%
+% types = {'L0smooth','WLS','RTV','RGF','WMF','fast_LLFenhancement','fast_LLFenhancementgeneral','WLSenhancement','style','pencilColor'};
+% totalPara = {{'000200', '000431', '002000', '009283', '020000'},
+% {'010000', '021544', '100000', '464159', '1000000'},
+% {'000200', '000447', '001000', '002236', '005000'},
+% {'1.00000','3.25000','5.50000','7.75000','10.00000'},
+% {'1.00000','3.25000','5.50000','7.75000','10.00000'},
+% {'2','3','5','7','8'},
+% {'1.00000'},
+% {'1.00000'},
+% {'1.00000'},
+% {'1.00000'}};
+
+
+
 %%%%%% uncomment for the jointly trained 10 operator model %%%%%%
 % types = {'L0smooth','WLS','RTV','RGF','WMF','shock','deblock-y','rain','SR-y','noise-gray'};
 % totalPara = {{'000200', '000431', '002000', '009283', '020000'},

@@ -6,6 +6,9 @@ addpath('./smoothing_method/RTV_sig_12');
 addpath('./smoothing_method/shockFilter');
 addpath('./smoothing_method/WLS_tog_08');
 addpath('./smoothing_method/WMF_cvpr_14');
+addpath('./smoothing_method/detail_enhancement_WLS_tog_08');
+addpath('./smoothing_method/fast_LLF_tog_14');
+addpath('./smoothing_method/PencilDrawing_NPAR_12');
 
 input_directory = '/mnt/data/VOC2012_input/';
 %%%%% change the output directory according to the image operator %%%%%
@@ -110,6 +113,27 @@ parfor n = 1:length(secondList)
     %     imwrite(patch_filtered,filename_output);
     % end
 
+    % % fast_LLF enhancement 
+    % for m = 2:8
+    %     filename_input = sprintf('%s/%s.png',input_directory,secondList(n).name(1:end-4));
+
+    %     patch = imread(filename_input);
+    %     [height,width,channel] = size(patch);
+
+    %     patch_double = im2double(patch);
+    %     patch_gray=rgb2gray(patch_double);
+    %     I_ratio=patch_double./repmat(patch_gray+eps,[1 1 3]);
+
+    %     fact = m;
+    %     sigma=0.1;
+    %     N=10;
+    %     I_enhanced=llf(patch_gray,sigma,fact,N);
+    %     patch_filtered=repmat(I_enhanced,[1 1 3]).*I_ratio;
+
+    %     filename_label = sprintf('%s/%s-fast_LLFenhancement-%d.png',output_directory,secondList(n).name(1:end-10),m);        
+    %     imwrite(patch_filtered,filename_label);
+    % end
+    
     % shock filter
     % for m = 1:1
     %     filename_input = sprintf('%s/%s.png',input_directory,secondList(n).name(1:end-4));
@@ -208,4 +232,106 @@ parfor n = 1:length(secondList)
     %     filename_output = sprintf('%s/%s.png',output_directory,secondList(n).name(1:end-4));
     %     imwrite(patch,filename_output);
     % end
+
+    % % fast_LLF enhancement with a general remapping function
+    % for m = 1:1
+    %     filename_input = sprintf('%s/%s.png',input_directory,secondList(n).name(1:end-4));
+
+    %     patch = imread(filename_input);
+    %     [height,width,channel] = size(patch);
+
+    %     patch_double = im2double(patch);
+    %     patch_gray=rgb2gray(patch_double);
+    %     I_ratio=patch_double./repmat(patch_gray+eps,[1 1 3]);
+
+    %     N=20;
+    %     I_enhanced=llf_general(patch_gray,@remapping_function,N);
+    %     patch_filtered=repmat(I_enhanced,[1 1 3]).*I_ratio;
+
+    %     filename_label = sprintf('%s/%s-fast_LLFenhancementgeneral.png',output_directory,secondList(n).name(1:end-10));
+    %     imwrite(patch_filtered,filename_label);
+    % end
+    
+    % % WLS enhancement
+    % for m = 1:1
+    %     filename_input = sprintf('%s/%s.png',input_directory,secondList(n).name(1:end-4));
+
+    %     patch = imread(filename_input);
+    %     [height,width,channel] = size(patch);
+
+    %     patch = im2double(patch);
+
+    %     cform = makecform('srgb2lab');
+    %     lab = applycform(patch, cform);
+    %     L = lab(:,:,1);
+
+    %     %% Filter
+    %     L0 = wlsFilter(L, 0.125, 1.2);
+    %     L1 = wlsFilter(L, 0.50,  1.2);
+
+    %     %% Fine
+    %     val0 = 25;
+    %     val1 = 1;
+    %     val2 = 1;
+    %     exposure = 1.0;
+    %     saturation = 1.1;
+    %     gamma = 1.0;
+
+    %     fine = tonemapLAB(lab, L0, L1,val0,val1,val2,exposure,gamma,saturation);
+
+    %     %% Medium
+    %     val0 = 1;
+    %     val1 = 40;
+    %     val2 = 1;
+    %     exposure = 1.0;
+    %     saturation = 1.1;
+    %     gamma = 1.0;
+
+    %     med = tonemapLAB(lab, L0, L1,val0,val1,val2,exposure,gamma,saturation);
+
+    %     %% Coarse
+    %     val0 = 4;
+    %     val1 = 1;
+    %     val2 = 15;
+    %     exposure = 1.10;
+    %     saturation = 1.1;
+    %     gamma = 1.0;
+
+    %     coarse = tonemapLAB(lab, L0, L1,val0,val1,val2,exposure,gamma,saturation);
+
+    %     patch_filtered=(coarse+med+fine)/3;
+
+    %     % filename_label = sprintf('%s/%s_%d_%d.png',output_directory,secondList(n).name(1:end-4),height,width);
+    %     filename_label = sprintf('%s/%s-WLSenhancement.png',output_directory,secondList(n).name(1:end-10));
+    %     imwrite(patch_filtered,filename_label);
+    % end
+
+    % % color pencil drawing
+    % for m = 1:1
+    %     filename_input = sprintf('%s/%s.png',input_directory,secondList(n).name(1:end-4));
+    %     patch = imread(filename_input);
+    %     [height,width,channel] = size(patch);
+
+    %     patch_filtered = PencilDrawing(patch, 8, 1, 8, 1, 1);
+
+    %     filename_label = sprintf('%s/%s-pencilColor.png',output_directory,secondList(n).name(1:end-10));
+    %     imwrite(patch_filtered,filename_label);
+    % end
+
+    % % fast LLF style transfer
+    % for m = 1:1
+    %     filename_input = sprintf('%s/%s.png',input_directory,secondList(n).name(1:end-4));
+    %     patch = imread(filename_input);
+    %     [height,width,channel] = size(patch);
+
+    %     patch_filtered=double(patch);
+    %     patch=rgb2gray(im2double(patch));
+    %     patch_filtered(:,:,1)=style_transfer(patch,style_image,20,3);
+    %     patch_filtered(:,:,2)=patch_filtered(:,:,1);
+    %     patch_filtered(:,:,3)=patch_filtered(:,:,1);
+
+    %     filename_label = sprintf('%s/%s-style.png',output_directory,secondList(n).name(1:end-10));
+    %     imwrite(patch_filtered,filename_label);
+    % end
+
 end

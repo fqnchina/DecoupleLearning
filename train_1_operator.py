@@ -344,6 +344,13 @@ with open("/mnt/data/VOC2012_10_operator_training_list.txt","r") as f:
         #     base_imgname = label_imgname.replace('_%s_%s_%s'%(name_parts[-3], name_parts[-2], name_parts[-1]), '')
         #     train_input_paths.append(os.path.join(filter_input_folder, base_imgname+'.png'))
         #     train_label_paths.append(label_path)
+        # if type == 'fastLLFenhancement':
+        #     param = float(name_parts[-3])
+        #     train_type.append(float('0.6'))
+        #     train_params.append((param-2)*0.033+0.002)
+        #     base_imgname = label_imgname.replace('_%s_%s_%s'%(name_parts[-3], name_parts[-2], name_parts[-1]), '')
+        #     train_input_paths.append(os.path.join(filter_input_folder, base_imgname+'.png'))
+        #     train_label_paths.append(label_path)
         # if type == 'deblock':
         #     param = float(name_parts[-3])
         #     train_type.append(float('0.7'))
@@ -427,6 +434,13 @@ with open("/mnt/data/VOC2012_10_operator_test_list.txt","r") as f:
         #     param = float(name_parts[-3])
         #     test_type.append(float('0.6'))
         #     test_params.append(0.02)
+        #     base_imgname = label_imgname.replace('_%s_%s_%s'%(name_parts[-3], name_parts[-2], name_parts[-1]), '')
+        #     test_input_paths.append(os.path.join(filter_input_folder, base_imgname+'.png'))
+        #     test_label_paths.append(label_path)
+        # if type == 'fastLLFenhancement':
+        #     param = float(name_parts[-3])
+        #     test_type.append(float('0.6'))
+        #     test_params.append((param-2)*0.033+0.002)
         #     base_imgname = label_imgname.replace('_%s_%s_%s'%(name_parts[-3], name_parts[-2], name_parts[-1]), '')
         #     test_input_paths.append(os.path.join(filter_input_folder, base_imgname+'.png'))
         #     test_label_paths.append(label_path)
